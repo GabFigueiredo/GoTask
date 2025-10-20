@@ -1,1 +1,37 @@
-/* You can add global styles to this file, and also import other style files */
+@import "tailwindcss";
+
+@utility scrollbar-hidden {
+  &::-webkit-scrollbar {
+    display: none;
+  }
+}
+
+@theme {
+  /* === Text === */
+  --color-text-heading: #080b12;
+  --color-text-paragraph: #374151;
+  --color-text-span: #9ca3af;
+  --color-text-placeholder: #89919f;
+  --color-text-invert: #ffffff;
+
+  /* === Background === */
+  --color-background-light: #ffffff;
+  --color-background-dark: #d7d8d8;
+  --color-background-surface: #fafafa;
+
+  /* === Accent === */
+  --color-accent-brand: #2a89ef;
+  --color-accent-brand-light: #ecf4fe;
+  --color-accent-brand-dark: #0a53a1;
+  --color-accent-red: #e61e32;
+  --color-accent-green: #15be78;
+  --color-accent-orange: #ff850a;
+
+  /* === Border === */
+  --color-border-dark: #636d7e;
+  --color-border-light: #d1d5db;
+}
+
+html {
+  font-family: "Archivo", sans-serif;
+}

@@ -1,0 +1,36 @@
+<div
+  class="flex flex-col p-3 gap-3 cursor-grab active:cursor-grabbing bg-white"
+>
+  <div class="space-y-1">
+    <div class="flex justify-between items-center">
+      <h3 class="font-semibold leading-[160%]">
+        {{ task.name }}
+      </h3>
+      <img
+        src="assets/Delete-Icon.svg"
+        class="w-[1rem] h-[1rem] cursor-pointer"
+        (click)="deleteTask()"
+      />
+    </div>
+    <p class="font-light text-[0.875rem] leading-[150%] line-clamp-2">
+      {{ task.description }}
+    </p>
+  </div>
+  <div
+    class="flex justify-between gap-1 text-accent-brand underline text-[0.875rem] font-semibold items-center"
+  >
+    <div class="flex gap-1 cursor-pointer">
+      <img src="assets/Comments-Icon.svg" class="w-[1rem] h-[1rem]" />
+      <span (click)="openCommentsModal()">
+        {{
+          task.comments.length > 1
+            ? task.comments.length + " comentários"
+            : task.comments.length === 1
+              ? task.comments.length + " comentário"
+              : "Nenhum comentário"
+        }}</span
+      >
+    </div>
+    <span (click)="openEditModal()" class="cursor-pointer">Editar</span>
+  </div>
+</div>

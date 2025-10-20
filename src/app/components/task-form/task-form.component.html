@@ -1,0 +1,61 @@
+@let mode = _data.mode;
+
+<form
+  [formGroup]="taskForm"
+  (ngSubmit)="handleSubmit()"
+  class="bg-background-light border-1 border-border-light w-full w-max-[617px] rounded-xl"
+>
+  <div
+    class="flex w-full p-[1rem] items-center justify-between border-b-1 border-border-light"
+  >
+    <div class="flex gap-1">
+      <img src="assets/Subtract.svg" />
+      <h2>{{ mode === "create" ? "Criar Tarefa" : "Editar Tarefa"}}</h2>
+    </div>
+    <img src="assets/Close-button.svg" (click)="closeModal()" />
+  </div>
+  <div class="space-y-5 p-4">
+    <div class="flex flex-col w-full">
+      <div class="space-y-2">
+        <h3>Nome</h3>
+        <input
+          formControlName="name"
+          class="p-3 w-full rounded-xl border-1 border-border-light placeholder:text-text-placeholder placeholder:text-[0.875rem]"
+          placeholder="Implementar paginação na lista de usuários"
+        />
+      </div>
+    </div>
+    <div class="flex flex-col w-full">
+      <div class="space-y-2">
+        <h3>Descrição</h3>
+        <textarea
+          formControlName="description"
+          class="p-3 w-full rounded-xl border-1 border-border-light placeholder:text-text-placeholder placeholder:text-[0.875rem]"
+          placeholder="Atualmente, a lista de usuários é carregada integralmente, impactando o desempenho da página. O objetivo é implementar a paginação para otimizar a exibição e melhorar a performance."
+        >
+        </textarea>
+      </div>
+    </div>
+  </div>
+  <div
+    class="flex w-full justify-end items-center border-t-1 border-border-light p-4 space-x-1"
+  >
+    <p
+      class="text-[0.875rem] font-semibold text-text-heading my-3 mx-4 cursor-pointer"
+      (click)="closeModal()"
+    >
+      Cancelar
+    </p>
+    <button
+      class="{{`px-4 py-2 not-[]:text-text-invert text-[0.875rem] font-semibold rounded-xl text-text-invert ${
+        taskForm.invalid
+        ? 'bg-[#D7D8D8]'
+        : 'bg-[#2A89EF]'
+        }`}}"
+      type="submit"
+      [disabled]="taskForm.invalid"
+    >
+      {{ mode === "create" ? "Criar" : "Salvar alterações"}}
+    </button>
+  </div>
+</form>

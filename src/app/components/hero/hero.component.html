@@ -1,0 +1,22 @@
+<div
+  class="flex flex-col-reverse items-center h-fit md:flex-row w-full justify-between p-8 bg-accent-brand-light rounded-xl"
+>
+  <div class="flex flex-col gap-4 items-center md:items-start">
+    <div class="text-center md:text-left">
+      <h1 class="font-bold text-[1.5rem]">Bem vindo de volta, Jennie</h1>
+      <p class="text-text-paragraph text-[0.875rem]">
+        Não se esqueça de atualizar suas tarefas.
+      </p>
+    </div>
+    <button
+      (click)="openNewTaskModal()"
+      class="flex gap-2 shadow-lg shadow-accent-brand/40 bg-accent-brand items-center w-fit rounded-xl text-white px-4 py-3 cursor-pointer duration-200 ease-in hover:scale-105"
+    >
+      <img src="assets/plus-circle.png" class="w-[1rem] h-[1rem]" />
+      <span class="font-bold">Criar uma tarefa</span>
+    </button>
+  </div>
+  <div class="w-fit h-full">
+    <img src="images/Hand-coding.png" />
+  </div>
+</div>
